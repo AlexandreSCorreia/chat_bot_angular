@@ -1,5 +1,7 @@
-# Chatbot Inteligente em Angular para Interação com Documentos
-
+<h1 align="center"> Chatbot Inteligente em Angular para Interação com Documentos </h1>
+<div align="center">
+  <img src=".github/img/app.png">
+</div>
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
 
 ## Development server
