@@ -1,0 +1,37 @@
+<div class="chatbot-toggle-btn" (click)="toggleChat()">
+  <span class="material-symbols-outlined" *ngIf="!isChatVisible">chat</span>
+  <span class="material-symbols-outlined"  *ngIf="isChatVisible">close</span>
+</div>
+
+<div class="chatbot-popup" id="chatbot-popup" [ngClass]="{'active': isChatVisible}">
+  <div class="chat-header">
+    <span>{{ chatHeaderTitle }}</span>
+    <button id="close-btn" (click)="toggleChat()">&times;</button>
+  </div>
+  <div id="chat-box" class="chat-box" #chatBox>
+    <div class="default-text" [innerHTML]="defaultTextMsg"></div>
+    <div *ngFor="let message of chatMessages" [ngClass]="{'user-message': message.sender === 'user', 'bot-message': message.sender === 'bot'}">
+      <div [innerHTML]="message.message"></div>
+    </div>
+    <div class="typing-indicator" *ngIf="isTyping">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+  <div class="chat-input">
+    <div class="file-upload">
+      <label for="file-upload">
+        <span class="material-symbols-outlined">attach_file</span>
+      </label>
+      <input id="file-upload" type="file" (change)="sendFile($event)" />
+    </div>
+    <input type="text" name="user-input" id="user-input" placeholder="Escreva sua mensagem..." [(ngModel)]="userMessage" (keypress)="onKeyPress($event)">
+    <button id="send-btn" (click)="sendMessage()">
+      <span class="material-symbols-outlined">send</span>
+    </button>
+  </div>
+  <div class="copyright">
+    <a  href="{{ linkCopy }}" target="_blank">{{ copy }}</a>
+  </div>
+</div>

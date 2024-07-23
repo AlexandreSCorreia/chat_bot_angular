@@ -1,0 +1,31 @@
+/* Color Variables */
+:root {
+  --body-bg: #f9f9f9;
+  --header-bg: #1087FF;
+  --header-text: #fff;
+  --close-btn-color: #fff;
+  --input-border: #ddd;
+  --send-btn-bg: #1087FF;
+  --send-btn-hover-bg: #0074CC;
+  --user-message-bg: #f3f3f3;
+  --user-message-text: #333;
+  --user-message-icon-bg: #1087FF;
+  --bot-message-bg: #1087FF;
+  --bot-message-text: #fff;
+  --bot-message-icon-bg: #1087FF;
+  --button-bg: #1087FF;
+  --button-hover-bg: #0074CC;
+  --chatbot-toggle-bg: #4070F4;
+  --chatbot-popup-bg: #fff;
+  --chatbot-popup-shadow: rgba(0, 0, 0, 0.1);
+  --file-upload-border: #ddd;
+}
+
+/* General Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--body-bg);
+  height: 100vh;
+}
